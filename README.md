@@ -1,4 +1,11 @@
-# bun-react-tailwind-template
+# bun-react-ts-tailwind Template
+
+To create a new Bun project:
+
+```bash
+bun create johndjameson/bun-react-ts-tailwind name-of-project
+cd name-of-project
+```
 
 To install dependencies:
 
@@ -17,5 +24,3 @@ To run for production:
 ```bash
 bun start
 ```
-
-This project was created using `bun init` in bun v1.2.19. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
