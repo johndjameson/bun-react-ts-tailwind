@@ -15,7 +15,6 @@ export default tseslint.config(
     languageOptions: {
       globals: globals.browser,
       parserOptions: {
-        ecmaFeatures: { jsx: true },
         project: "./tsconfig.json",
       },
     },
