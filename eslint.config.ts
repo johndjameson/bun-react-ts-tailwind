@@ -26,6 +26,17 @@ export default tseslint.config(
       "simple-import-sort": simpleImportSort,
     },
     rules: {
+      "react/jsx-sort-props": [
+        "warn",
+        {
+          callbacksLast: false,
+          shorthandFirst: false,
+          shorthandLast: false,
+          multiline: "ignore",
+          ignoreCase: true,
+          noSortAlphabetically: false,
+        },
+      ],
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
     },
