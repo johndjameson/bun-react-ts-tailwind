@@ -1,9 +1,10 @@
 import eslint from "@eslint/js";
-import react from "eslint-plugin-react";
-import tseslint from "typescript-eslint";
-import globals from "globals";
-import reactHooks from "eslint-plugin-react-hooks";
 import jsxA11y from "eslint-plugin-jsx-a11y";
+import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -20,6 +21,13 @@ export default tseslint.config(
       parserOptions: {
         project: "./tsconfig.json",
       },
+    },
+    plugins: {
+      "simple-import-sort": simpleImportSort,
+    },
+    rules: {
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
     },
     settings: {
       react: {
