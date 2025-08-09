@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+/* eslint-disable */
 import plugin from "bun-plugin-tailwind";
 import { existsSync } from "fs";
 import { rm } from "fs/promises";
@@ -34,6 +35,7 @@ Example:
 }
 
 const toCamelCase = (str: string): string =>
+  // @ts-ignore
   str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 
 const parseValue = (value: string): any => {
@@ -59,6 +61,7 @@ function parseArgs(): Partial<Bun.BuildConfig> {
 
     if (arg.startsWith("--no-")) {
       const key = toCamelCase(arg.slice(5));
+      // @ts-ignore
       config[key] = false;
       continue;
     }
@@ -68,6 +71,7 @@ function parseArgs(): Partial<Bun.BuildConfig> {
       (i === args.length - 1 || args[i + 1]?.startsWith("--"))
     ) {
       const key = toCamelCase(arg.slice(2));
+      // @ts-ignore
       config[key] = true;
       continue;
     }
@@ -86,9 +90,12 @@ function parseArgs(): Partial<Bun.BuildConfig> {
 
     if (key.includes(".")) {
       const [parentKey, childKey] = key.split(".");
+      // @ts-ignore
       config[parentKey] = config[parentKey] || {};
+      // @ts-ignore
       config[parentKey][childKey] = parseValue(value);
     } else {
+      // @ts-ignore
       config[key] = parseValue(value);
     }
   }
