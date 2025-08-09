@@ -41,8 +41,8 @@ Use HTML imports with `Bun.serve()`. Don't use `vite`. HTML imports fully suppor
 
 Server:
 
-```ts#index.ts
-import index from "./index.html"
+```ts#index.tsx
+import index from "@/index.html"
 
 Bun.serve({
   routes: {
@@ -78,7 +78,7 @@ HTML files can import .tsx, .jsx or .js files directly and Bun's bundler will tr
 <html>
   <body>
     <h1>Hello, world!</h1>
-    <script type="module" src="./frontend.tsx"></script>
+    <script type="module" src="@/frontend.tsx"></script>
   </body>
 </html>
 ```
